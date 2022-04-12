@@ -47,7 +47,7 @@ export default {
 
 <style lang="scss">
 .header {
-  margin: 37px 24px 37px 24px;
+  margin: 37px 0;
   display: flex;
   align-items: baseline;
   &__logo {

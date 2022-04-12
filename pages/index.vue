@@ -14,20 +14,25 @@
        >
      </div>
     </div>
-    <div class="main__posts" v-if="posts">
-      <Post
-        v-for="(item, key) in posts"
-        :key="key"
-        :post="item"
+    <div v-if="posts.length">
+      <div class="main__posts">
+        <Post
+          v-for="(item, key) in posts"
+          :key="key"
+          :post="item"
+        />
+      </div>
+      <Pagination
+        v-if="pagination.total > 1"
+        :pagination="pagination"
+        :pages="pages"
+        :is-show-next="true"
+        @changePage="selectPage"
       />
     </div>
-    <Pagination
-      v-if="pagination.total > 1"
-      :pagination="pagination"
-      :pages="pages"
-      :is-show-next="true"
-      @changePage="selectPage"
-    />
+    <div class="main__count" v-else>
+      <p>По вашему запросу данных нет</p>
+    </div>
   </div>
 </template>
 
@@ -112,6 +117,12 @@ export default {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 23px;
     grid-row-gap: 40px;
+  }
+  &__count {
+    font-family: 'Manrop-Regular', serif;
+    font-size: 17px;
+    line-height: 22px;
+    color: rgba(60, 60, 67, 0.6);
   }
   &__search {
     display: none;
