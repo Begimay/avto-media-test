@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = process.env.baseAPI
+axios.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 
 export const HTTP = axios.create({
   baseURL: process.env.baseAPI,
