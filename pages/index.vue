@@ -88,10 +88,7 @@ export default {
       this.pagination.current = obj.item
       this.getAllPosts();
       window.scrollTo(0,0)
-      if (this.pagination.total === obj.item) {
-        if (this.pagination.total >= 4) this.pagination.init = this.pagination.total - 4
-        else this.pagination.init = 0
-      }
+      if (this.pagination.total === obj.item) this.pagination.init = this.pagination.total - 4
       else if (obj.index === 0 && obj.item > 1) this.pagination.init--
       else if (obj.index === 10 && obj.item < this.pagination.total - 1) this.pagination.init++
     },
