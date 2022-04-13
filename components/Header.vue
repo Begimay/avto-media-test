@@ -35,6 +35,7 @@ export default {
   methods: {
     ...mapActions('posts', ["getPosts"]),
     searchingPosts() {
+      this.$router.push('/')
       this.getPosts({
         _embed: 'comments',
         q: this.search,

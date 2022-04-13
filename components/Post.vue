@@ -60,12 +60,10 @@ export default {
   },
   computed: {
     postTitle() {
-      if (this.post.title.length > 20) return this.post.title.slice(0, 20) + '...'
-      return this.post.title
+      return this.post.title.length > 20 ? this.post.title.slice(0, 20) + '...' : this.post.title
     },
     postBody() {
-      if (this.post.body.length > 50) return this.post.body.slice(0, 50) + '...'
-      return this.post.body
+      return this.post.body.length > 50 ? this.post.body.slice(0, 50) + '...' : this.post.body
     }
   }
 }
