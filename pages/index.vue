@@ -96,7 +96,7 @@ export default {
       this.pagination = {
         init: 0,
         current: 1,
-        total: undefined
+        total: 10
       }
       this.getPosts()
     },

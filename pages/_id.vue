@@ -52,6 +52,7 @@
 <script>
 import Comment from "~/components/Comment";
 import {mapActions, mapGetters} from "vuex";
+
 export default {
   name: "Post",
   filters: {
@@ -80,7 +81,7 @@ export default {
       updateText: 'updateText'
     }),
     updateTextPost () {
-      this.updateText({id: this.$route.params.id, data: this.post}).then(result => {
+      this.updateText({id: this.$route.params.id, data: this.post}).then(() => {
         this.editing = false
       })
     }
