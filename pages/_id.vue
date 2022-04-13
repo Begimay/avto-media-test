@@ -55,9 +55,6 @@ import {mapActions, mapGetters} from "vuex";
 
 export default {
   name: "Post",
-  filters: {
-    bgrImageCover: url => `background-image: url(${url});`
-  },
   data: () => ({
     editing: false
   }),
